@@ -1,89 +1,82 @@
-#define _POSIX_C_SOURCE 200112L
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdint.h>
 #include <time.h>
 #include "blis.h"
 
-static double rand_double()
-{
-    return (double)rand() / (double)RAND_MAX;
+double get_time() {
+    struct timespec ts;
+    clock_gettime(CLOCK_MONOTONIC, &ts);
+    return ts.tv_sec + ts.tv_nsec * 1e-9;
 }
 
-int main(int argc, char *argv[])
-{
-    if (argc != 3)
-    {
-        printf("Usage: %s <N> <RunNumber>\n", argv[0]);
-        return 1;
-    }
 
-    const dim_t N = atoi(argv[1]);
-    const int run = atoi(argv[2]);
-
-    srand(run);
-
-    size_t elements = (size_t)N * (size_t)N;
-
-    double *A = (double *)malloc(elements * sizeof(double));
-    double *B = (double *)malloc(elements * sizeof(double));
-    double *C = (double *)malloc(elements * sizeof(double));
-
-    if (!A || !B || !C)
-    {
-        printf("Memory allocation failed.\n");
-        return 1;
-    }
-
-    for (size_t i = 0; i < elements; i++)
-    {
-        A[i] = rand_double();
-        B[i] = rand_double();
-        C[i] = 0.0;
-    }
-
+void benchmark_gemm(int n, int run_num) {
     double alpha = 1.0;
     double beta = 0.0;
 
-    struct timespec start, end;
 
-    clock_gettime(CLOCK_MONOTONIC, &start);
+    double* A = (double*)malloc(n * n * sizeof(double));
+    double* B = (double*)malloc(n * n * sizeof(double));
+    double* C = (double*)malloc(n * n * sizeof(double));
 
-    bli_dgemm(
-        BLIS_NO_TRANSPOSE,
-        BLIS_NO_TRANSPOSE,
-        N, N, N,
-        &alpha,
-        A, N, 1,
-        B, N, 1,
-        &beta,
-        C, N, 1
-    );
-
-    clock_gettime(CLOCK_MONOTONIC, &end);
-
-    double elapsed = (end.tv_sec - start.tv_sec) + (end.tv_nsec - start.tv_nsec) * 1e-9;
-    double flops = 2.0 * (double)N * (double)N * (double)N;
-    double gflops = flops / (elapsed * 1e9);
-
-    // Master execution tracking file
-    FILE *fp = fopen("blis_benchmark_results.csv", "a");
-    if (!fp)
-    {
-        printf("Cannot open results file.\n");
+    
+    if (A == NULL || B == NULL || C == NULL) {
+        printf("Size: %5dx%5d [Run %2d/10] | SKIPPED (Insufficient RAM)\n", n, n, run_num);
         free(A); free(B); free(C);
-        return 1;
+        return;
     }
 
-    const char *threads = getenv("BLIS_NUM_THREADS");
-    if (!threads) threads = "Unknown";
+    
+    for (int i = 0; i < n * n; i++) {
+        A[i] = 1.0;
+        B[i] = 2.0;
+        C[i] = 0.0;
+    }
 
-    fprintf(fp, "%d,%d,%s,%.9f,%.0f,%.6f\n", run, (int)N, threads, elapsed, flops, gflops);
-    fclose(fp);
+    double start = get_time();
 
+    // Call BLIS double-precision GEMM
+    // Storage: Column-major (row stride = 1, column stride = n)
+    bli_dgemm(BLIS_NO_TRANSPOSE, BLIS_NO_TRANSPOSE, 
+              n, n, n, 
+              &alpha, 
+              A, 1, n,   
+              B, 1, n, 
+              &beta, 
+              C, 1, n);
+
+    double end = get_time();
+    double elapsed = end - start;
+
+    // Calculate performance: (2 * N^3 operations) / elapsed time
+    double gflops = (2.0 * n * n * n) / (elapsed * 1e9);
+
+    printf("Size: %5dx%5d [Run %2d/10] | Time: %6.2f sec | Performance: %7.2f GFLOPS\n", 
+           n, n, run_num, elapsed, gflops);
+
+    
     free(A);
     free(B);
     free(C);
+}
 
+int main() {
+  
+    int sizes[10] = {2000, 4000, 6000, 8000, 10000, 12000, 14000, 16000, 18000, 20000};
+
+    printf("=================================================================================\n");
+    printf("                          BLIS GEMM C BENCHMARK RESULTS                          \n");
+    printf("=================================================================================\n");
+
+   
+    for (int i = 0; i < 10; i++) {
+     
+        for (int run = 1; run <= 10; run++) {
+            benchmark_gemm(sizes[i], run);
+        }
+        printf("---------------------------------------------------------------------------------\n");
+    }
+
+    printf("=================================================================================\n");
     return 0;
 }
