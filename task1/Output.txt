@@ -1,0 +1,105 @@
+Output
+
+=================================================================================
+                          BLIS GEMM C BENCHMARK RESULTS                          
+=================================================================================
+Size:  2000x 2000 [Run  1/10] | Time:   0.55 sec | Performance:   29.19 GFLOPS
+Size:  2000x 2000 [Run  2/10] | Time:   0.55 sec | Performance:   29.10 GFLOPS
+Size:  2000x 2000 [Run  3/10] | Time:   0.55 sec | Performance:   29.30 GFLOPS
+Size:  2000x 2000 [Run  4/10] | Time:   0.54 sec | Performance:   29.51 GFLOPS
+Size:  2000x 2000 [Run  5/10] | Time:   0.50 sec | Performance:   31.93 GFLOPS
+Size:  2000x 2000 [Run  6/10] | Time:   0.50 sec | Performance:   31.97 GFLOPS
+Size:  2000x 2000 [Run  7/10] | Time:   0.50 sec | Performance:   32.25 GFLOPS
+Size:  2000x 2000 [Run  8/10] | Time:   0.50 sec | Performance:   32.32 GFLOPS
+Size:  2000x 2000 [Run  9/10] | Time:   0.50 sec | Performance:   32.20 GFLOPS
+Size:  2000x 2000 [Run 10/10] | Time:   0.50 sec | Performance:   32.28 GFLOPS
+---------------------------------------------------------------------------------
+Size:  4000x 4000 [Run  1/10] | Time:   3.22 sec | Performance:   39.74 GFLOPS
+Size:  4000x 4000 [Run  2/10] | Time:   2.79 sec | Performance:   45.84 GFLOPS
+Size:  4000x 4000 [Run  3/10] | Time:   2.82 sec | Performance:   45.42 GFLOPS
+Size:  4000x 4000 [Run  4/10] | Time:   2.81 sec | Performance:   45.51 GFLOPS
+Size:  4000x 4000 [Run  5/10] | Time:   2.80 sec | Performance:   45.75 GFLOPS
+Size:  4000x 4000 [Run  6/10] | Time:   2.81 sec | Performance:   45.55 GFLOPS
+Size:  4000x 4000 [Run  7/10] | Time:   2.81 sec | Performance:   45.52 GFLOPS
+Size:  4000x 4000 [Run  8/10] | Time:   2.81 sec | Performance:   45.60 GFLOPS
+Size:  4000x 4000 [Run  9/10] | Time:   2.79 sec | Performance:   45.94 GFLOPS
+Size:  4000x 4000 [Run 10/10] | Time:   2.78 sec | Performance:   46.04 GFLOPS
+---------------------------------------------------------------------------------
+Size:  6000x 6000 [Run  1/10] | Time:   9.46 sec | Performance:   45.66 GFLOPS
+Size:  6000x 6000 [Run  2/10] | Time:   9.60 sec | Performance:   44.99 GFLOPS
+Size:  6000x 6000 [Run  3/10] | Time:   9.25 sec | Performance:   46.72 GFLOPS
+Size:  6000x 6000 [Run  4/10] | Time:   9.22 sec | Performance:   46.87 GFLOPS
+Size:  6000x 6000 [Run  5/10] | Time:   9.29 sec | Performance:   46.50 GFLOPS
+Size:  6000x 6000 [Run  6/10] | Time:   9.37 sec | Performance:   46.11 GFLOPS
+Size:  6000x 6000 [Run  7/10] | Time:   9.32 sec | Performance:   46.36 GFLOPS
+Size:  6000x 6000 [Run  8/10] | Time:   9.23 sec | Performance:   46.79 GFLOPS
+Size:  6000x 6000 [Run  9/10] | Time:   9.21 sec | Performance:   46.92 GFLOPS
+Size:  6000x 6000 [Run 10/10] | Time:   9.23 sec | Performance:   46.79 GFLOPS
+---------------------------------------------------------------------------------
+Size:  8000x 8000 [Run  1/10] | Time:  22.22 sec | Performance:   46.08 GFLOPS
+Size:  8000x 8000 [Run  2/10] | Time:  22.09 sec | Performance:   46.35 GFLOPS
+Size:  8000x 8000 [Run  3/10] | Time:  22.18 sec | Performance:   46.18 GFLOPS
+Size:  8000x 8000 [Run  4/10] | Time:  22.05 sec | Performance:   46.44 GFLOPS
+Size:  8000x 8000 [Run  5/10] | Time:  22.16 sec | Performance:   46.20 GFLOPS
+Size:  8000x 8000 [Run  6/10] | Time:  22.11 sec | Performance:   46.31 GFLOPS
+Size:  8000x 8000 [Run  7/10] | Time:  22.15 sec | Performance:   46.22 GFLOPS
+Size:  8000x 8000 [Run  8/10] | Time:  22.10 sec | Performance:   46.33 GFLOPS
+Size:  8000x 8000 [Run  9/10] | Time:  22.16 sec | Performance:   46.21 GFLOPS
+Size:  8000x 8000 [Run 10/10] | Time:  22.08 sec | Performance:   46.37 GFLOPS
+---------------------------------------------------------------------------------
+Size: 10000x10000 [Run  1/10] | Time:  42.87 sec | Performance:   46.65 GFLOPS
+Size: 10000x10000 [Run  2/10] | Time:  43.23 sec | Performance:   46.27 GFLOPS
+Size: 10000x10000 [Run  3/10] | Time:  42.73 sec | Performance:   46.81 GFLOPS
+Size: 10000x10000 [Run  4/10] | Time:  42.86 sec | Performance:   46.67 GFLOPS
+Size: 10000x10000 [Run  5/10] | Time:  43.20 sec | Performance:   46.30 GFLOPS
+Size: 10000x10000 [Run  6/10] | Time:  42.94 sec | Performance:   46.58 GFLOPS
+Size: 10000x10000 [Run  7/10] | Time:  42.97 sec | Performance:   46.55 GFLOPS
+Size: 10000x10000 [Run  8/10] | Time:  43.04 sec | Performance:   46.47 GFLOPS
+Size: 10000x10000 [Run  9/10] | Time:  42.87 sec | Performance:   46.65 GFLOPS
+Size: 10000x10000 [Run 10/10] | Time:  43.03 sec | Performance:   46.48 GFLOPS
+---------------------------------------------------------------------------------
+Size: 12000x12000 [Run  1/10] | Time:  74.53 sec | Performance:   46.37 GFLOPS
+Size: 12000x12000 [Run  2/10] | Time:  74.61 sec | Performance:   46.32 GFLOPS
+Size: 12000x12000 [Run  3/10] | Time:  74.76 sec | Performance:   46.23 GFLOPS
+Size: 12000x12000 [Run  4/10] | Time:  74.64 sec | Performance:   46.30 GFLOPS
+Size: 12000x12000 [Run  5/10] | Time:  74.82 sec | Performance:   46.19 GFLOPS
+Size: 12000x12000 [Run  6/10] | Time:  74.50 sec | Performance:   46.39 GFLOPS
+Size: 12000x12000 [Run  7/10] | Time:  74.27 sec | Performance:   46.53 GFLOPS
+Size: 12000x12000 [Run  8/10] | Time:  74.98 sec | Performance:   46.09 GFLOPS
+Size: 12000x12000 [Run  9/10] | Time:  74.87 sec | Performance:   46.16 GFLOPS
+Size: 12000x12000 [Run 10/10] | Time:  75.12 sec | Performance:   46.01 GFLOPS
+---------------------------------------------------------------------------------
+Size: 14000x14000 [Run  1/10] | Time: 117.48 sec | Performance:   46.72 GFLOPS
+Size: 14000x14000 [Run  2/10] | Time: 117.26 sec | Performance:   46.80 GFLOPS
+Size: 14000x14000 [Run  3/10] | Time: 117.60 sec | Performance:   46.67 GFLOPS
+Size: 14000x14000 [Run  4/10] | Time: 117.85 sec | Performance:   46.57 GFLOPS
+Size: 14000x14000 [Run  5/10] | Time: 117.42 sec | Performance:   46.74 GFLOPS
+Size: 14000x14000 [Run  6/10] | Time: 117.24 sec | Performance:   46.81 GFLOPS
+Size: 14000x14000 [Run  7/10] | Time: 117.59 sec | Performance:   46.67 GFLOPS
+Size: 14000x14000 [Run  8/10] | Time: 117.25 sec | Performance:   46.80 GFLOPS
+Size: 14000x14000 [Run  9/10] | Time: 117.48 sec | Performance:   46.71 GFLOPS
+Size: 14000x14000 [Run 10/10] | Time: 118.89 sec | Performance:   46.16 GFLOPS
+---------------------------------------------------------------------------------
+Size: 16000x16000 [Run  1/10] | Time: 179.00 sec | Performance:   45.76 GFLOPS
+Size: 16000x16000 [Run  2/10] | Time: 178.81 sec | Performance:   45.81 GFLOPS
+Size: 16000x16000 [Run  3/10] | Time: 178.00 sec | Performance:   46.02 GFLOPS
+Size: 16000x16000 [Run  4/10] | Time: 177.52 sec | Performance:   46.15 GFLOPS
+Size: 16000x16000 [Run  5/10] | Time: 176.52 sec | Performance:   46.41 GFLOPS
+Size: 16000x16000 [Run  6/10] | Time: 176.37 sec | Performance:   46.45 GFLOPS
+Size: 16000x16000 [Run  7/10] | Time: 175.93 sec | Performance:   46.56 GFLOPS
+Size: 16000x16000 [Run  8/10] | Time: 176.53 sec | Performance:   46.41 GFLOPS
+Size: 16000x16000 [Run  9/10] | Time: 176.55 sec | Performance:   46.40 GFLOPS
+Size: 16000x16000 [Run 10/10] | Time: 176.61 sec | Performance:   46.39 GFLOPS
+---------------------------------------------------------------------------------
+Size: 18000x18000 [Run  1/10] | Time: 249.63 sec | Performance:   46.72 GFLOPS
+Size: 18000x18000 [Run  2/10] | Time: 251.08 sec | Performance:   46.45 GFLOPS
+Size: 18000x18000 [Run  3/10] | Time: 248.72 sec | Performance:   46.90 GFLOPS
+Size: 18000x18000 [Run  4/10] | Time: 248.50 sec | Performance:   46.94 GFLOPS
+Size: 18000x18000 [Run  5/10] | Time: 248.11 sec | Performance:   47.01 GFLOPS
+Size: 18000x18000 [Run  6/10] | Time: 254.32 sec | Performance:   45.86 GFLOPS
+Size: 18000x18000 [Run  7/10] | Time: 248.79 sec | Performance:   46.88 GFLOPS
+Size: 18000x18000 [Run  8/10] | Time: 248.70 sec | Performance:   46.90 GFLOPS
+Size: 18000x18000 [Run  9/10] | Time: 248.38 sec | Performance:   46.96 GFLOPS
+Size: 18000x18000 [Run 10/10] | Time: 252.33 sec | Performance:   46.22 GFLOPS
+---------------------------------------------------------------------------------
+
