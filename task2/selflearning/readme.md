@@ -1,2 +1,1 @@
-#Quantization
 I learned about Quantization and Implemented the code for Symmetric and Asymmetric quantization and also Implemented the range strategies in asymmetric of Min-Max approach and the Percentile approach
